@@ -1,0 +1,21 @@
+.login{
+	margin-top: 5%;
+}
+.login .loginContainer, .register .regContainer{
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: 0 auto;
+	padding: 3em 2em;
+	width: 60%;
+}
+.login .loginContainer .loginBtn, .register .regContainer .loginBtn{
+	background-color: #04AD77;
+	color: #FFFFFF;
+	font-size: 1.5em;
+	font-weight: 100;
+	padding: 0.2em 7.5em;
+}
+
+.register .regContainer .loginBtn{
+	padding: 0.2em 7em;
+}

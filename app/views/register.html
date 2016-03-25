@@ -1,0 +1,27 @@
+<div class="container register">
+		<div class="regContainer">
+			<form>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="user.fname" placeholder="First Name" />
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="user.lname" placeholder="Last Name" />
+				</div>
+				<div class="form-group">
+					<input type="number" class="form-control" ng-model="user.phone" placeholder="Phone" />
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" ng-model="user.email" placeholder=" Email" />
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
+				</div> 
+				<div class="form-group">
+					<input type="password" class="form-control" ng-model="user.confPassword" placeholder="Confirm Password" />
+				</div> 
+				<div class="form-group text-center">
+					<input type="submit" class="btn loginBtn" ng-click="login(user)" value="Register" />
+				</div>
+			</form>
+		</div>
+	</div>
