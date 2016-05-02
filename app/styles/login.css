@@ -19,3 +19,6 @@
 .register .regContainer .loginBtn{
 	padding: 0.2em 7em;
 }
+.error{
+	color: red;
+}

@@ -28,3 +28,58 @@
 .eventsFixed input{
 	border: 0px solid;
 }
+.card{
+	border: 1px solid #5a5a5a;
+	-webkit-box-shadow: 0 6px 4px -6px #3A3838;
+    box-shadow: 0 6px 4px -6px #3A3838;
+	
+	margin: 5% 3%;
+}
+.cardBody{
+	padding: 5%;
+}
+.cardTitle{
+	/*color: #04AD77;*/
+}
+.cardFooter{
+	background-color: #5a5a5a;
+	font-weight: 200;
+	padding: 2% 0;
+}
+.cardFooter a{
+		color: #FFFFFF;
+
+}
+.cardFooter a:hover{
+	text-decoration: none;
+}
+.eventsList li{
+	display: inline-block;
+	width: 33%;
+}
+.card:hover{
+	border: 1px solid #04AD77;
+	
+}
+.cardFooter:hover{
+	background-color: #04AD77;
+}
+.viewDetail{
+	/*display: none;*/
+}
+
+.jobList{
+	margin-bottom: 5%;
+}
+.jobDescContainer{
+	margin: 2% 1.6%;
+	border: 1px solid #5a5a5a;
+	-webkit-box-shadow: 0 6px 4px -6px #3A3838;
+    box-shadow: 0 6px 4px -6px #3A3838;
+    padding: 10px;
+}
+.jobDescContainer .title{
+
+}
+
+

@@ -1,0 +1,45 @@
+<div>
+    <!-- <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
+    </div> -->
+    <div class="modal-body">
+        <!-- Single button -->
+        <div class="row">
+            <div class="col-md-3">
+                <!-- <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Skill <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Javascript</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">HTML5</a></li>
+                    </ul>
+                </div> -->
+
+                <select name="singleSelect" id="singleSelect" ng-model="skillset">
+                  <option value="">---Please select---</option> <!-- not selected / blank option -->
+                  <option value="{{data.option1}}">Option 1</option> <!-- interpolation -->
+                  <option value="option-2">Option 2</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>

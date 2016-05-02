@@ -43,10 +43,12 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav headerCont">
               <!-- <li class="active"><a href="#/">Home</a></li> -->
               <li><a ng-href="#/login">Login</a></li>
               <li><a ng-href="#/">Contact</a></li>
+              <li><a ng-href="#/profile">Profile</a></li>
+              <li><a href="" ng-click="logout()">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -59,7 +61,18 @@
 
     <div class="footer">
       <div class="container-fluid">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <div class="col-md-10">
+        <i>Get Ready....</i>
+      </div>
+      <div class="col-md-2">
+        <ul>
+          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+          <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+          <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+        
+        
       </div>
     </div>
 
@@ -90,22 +103,32 @@
     <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js"></script>
     <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
     <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/seeker.js"></script>
         <script src="scripts/controllers/interviewer.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/register.js"></script>
         <script src="scripts/controllers/leftnav.js"></script>
         <script src="scripts/controllers/account.js"></script>
+        <script src="scripts/controllers/uicalendar.js"></script>
+        <script src="scripts/controllers/interviewreq.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+       
         <script src="scripts/services/account.js"></script>
+        <script src="scripts/services/userservice.js"></script>       
+        <script src="scripts/services/config.js"></script>       
+        <script src="scripts/services/seeker.js"></script>
         
         <script src="scripts/directives/uicalendar.js"></script>
-        <script src="scripts/controllers/uicalendar.js"></script>
+        
+        
+        <script src="scripts/services/apiservice.js"></script>
+        <script src="scripts/controllers/jobslist.js"></script>
         <!-- endbuild -->
 </body>
 </html>

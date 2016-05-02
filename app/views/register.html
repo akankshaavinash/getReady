@@ -1,27 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <alert ng-repeat="alert in alerts" class = "alert alert-success" type="{{alert.type}}" close = "hideAlert($index)" ng-cloak >{{alert.msg}}</alert>
+        </div>
+    </div>
+</div>
 <div class="container register">
-		<div class="regContainer">
-			<form>
-				<div class="form-group">
-					<input type="text" class="form-control" ng-model="user.fname" placeholder="First Name" />
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" ng-model="user.lname" placeholder="Last Name" />
-				</div>
-				<div class="form-group">
-					<input type="number" class="form-control" ng-model="user.phone" placeholder="Phone" />
-				</div>
-				<div class="form-group">
-					<input type="email" class="form-control" ng-model="user.email" placeholder=" Email" />
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
-				</div> 
-				<div class="form-group">
-					<input type="password" class="form-control" ng-model="user.confPassword" placeholder="Confirm Password" />
-				</div> 
-				<div class="form-group text-center">
-					<input type="submit" class="btn loginBtn" ng-click="login(user)" value="Register" />
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class="regContainer">
+        <form name="registerForm" ng-model="reg.regForm">
+            <div class="form-group">
+                <input type="text" class="form-control" name="fname" ng-model="reg.user.name" placeholder="First Name*" required />
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.fname.$touched">
+                    <div ng-show="registerForm.fname.$error.required">Tell us your first name.</div>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <input type="text" class="form-control" ng-model="reg.user.lname" placeholder="Last Name*" name = "lname"required/>
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.lname.$touched">
+                    <div ng-show="registerForm.lname.$error.required">Tell us your last name.</div>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="reg.user.phone" placeholder="Phone*" name = "phone" required/>
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.phone.$touched">
+                    <div ng-show="registerForm.phone.$error.required">Tell us your phone.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <select class="form-control" ng-model="reg.user.accType">
+                    <option disabled selected class="defaultSelect">Select Account type</option>
+                    <option>Seeker</option>
+                    <option>Interviewer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="multipleSelect" id="multipleSelect" ng-model="reg.user.skillset" multiple>
+                  <option disabled selected class="defaultSelect">Select skillsets</option>
+                  <option value="option-1">Html / Html5, CSS / CSS3, SASS, Javascript, JQuery</option>
+                  <option value="option-2">CSS</option>
+                  <option value="option-3">Javascript</option>
+                  <option value="option-1">Java, J2EE, Spring, Hibernate</option>
+                  <option value="option-2">SQL</option>
+                  <option value="option-3">Mongodb</option>
+                  <option value="option-3">Angularjs</option>
+                  <option value="option-3">Bootstrap</option>
+                  <option value="option-3">React JS</option>
+                  <option value="option-3">Nodejs</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" ng-model="reg.user.email" placeholder=" Email*" name="email"required/>
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.email.$touched">
+                    <div ng-show="registerForm.email.$error.required">Enter your email</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" ng-model="reg.user.password" placeholder="Password*" required name="pass"/>
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.pass.$touched">
+                    <div ng-show="registerForm.pass.$error.required">Please enter password.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" ng-model="reg.user.confPassword" placeholder="Confirm Password*" name="conPass" required/>
+                <div class= "error" ng-show="registerForm.$submitted || registerForm.conPass.$touched">
+                    <div ng-show="registerForm.conPass.$error.required">Please confirm your passwor.</div>
+                </div>
+            </div>
+            <div class="form-group">
+		        <input type="file" file-model="resume"/><br />
+		    	<button class="btn" ng-click="uploadFile()">Upload Resume</button>
+		    </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn loginBtn" ng-click="reg.register(reg.user)" value="Register" />
+            </div>
+        </form>
+    </div>
+</div>

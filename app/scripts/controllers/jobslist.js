@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name getReadyNewApp.controller:SeekerCtrl
+ * @name getReadyNewApp.controller:JobslistCtrl
  * @description
- * # SeekerCtrl
+ * # JobslistCtrl
  * Controller of the getReadyNewApp
  */
 angular.module('getReadyNewApp')
-  .controller('SeekerCtrl', function () {
+  .controller('JobslistCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

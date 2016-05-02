@@ -9,7 +9,7 @@
  */
 angular.module('getReadyNewApp')
   .constant('uiCalendarConfig', {calendars: {}})
-  .controller('AccountCtrl', function ($scope, $compile, $timeout, uiCalendarConfig) {
+  .controller('AccountCtrl', function ($scope, $compile, $timeout, $uibModal, uiCalendarConfig, seeker) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -21,21 +21,34 @@ angular.module('getReadyNewApp')
     var m = date.getMonth();
     var y = date.getFullYear();
 
+    $scope.interviewSetup = {};
+
     $scope.changeTo = 'Hungarian';
+    
+    $scope.getInterviewSetup = function(){
+      seeker.getInterviewSetup().then(function(data){
+        console.log(data);
+      })
+    };
+
+     $scope.getInterviewSetup();
+
+    $scope.interviewSetup = function(){
+      seeker.interviewSetup().then(function(data){
+        console.log("interviewSetup.....");
+      });
+    };
+
+    $scope.interviewSetup ();
+
+
     /* event source that pulls from google.com */
     $scope.eventSource = {
-            url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
-            className: 'gcal-event',           // an option!
-            currentTimezone: 'America/Chicago' // an option!
+            
     };
     /* event source that contains custom events on the scope */
     $scope.events = [
-      {title: 'All Day Event',start: new Date(y, m, 1)},
-      {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-      {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+      
     ];
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
@@ -82,11 +95,37 @@ angular.module('getReadyNewApp')
     };
     /* add custom event*/
     $scope.addEvent = function() {
+      console.log('Add Event');
       $scope.events.push({
         title: 'Open Sesame',
         start: new Date(y, m, 28),
         end: new Date(y, m, 29),
         className: ['openSesame']
+      });
+
+      var modalInstance = $uibModal.open({
+        templateUrl: 'views/modals/interviewReq.html',
+        controller: 'InterviewreqCtrl',
+        windowClass:'roundedModal',
+        resolve: {
+          items: function () {
+            return {
+
+            };
+          }
+        }
+      });
+
+      modalInstance.result.then(function (data) {
+        data.jobseeker_email_id = "";
+        data.interviewer_email_id = "";
+        data.codelink = "";
+        data.feedback = "";
+        data.date_time = "";
+        $scope.interviewSetup = data;
+        console.log(data);
+      }, function () {
+        // $log.info('Modal dismissed at: ' + new Date());
       });
     };
     /* remove event */
@@ -143,4 +182,8 @@ angular.module('getReadyNewApp')
     $scope.eventSources = [$scope.events, $scope.eventSource, $scope.eventsF];
     $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
     
+    //----------------- Seeker Api Call --------------------------------
+
+
+
   });

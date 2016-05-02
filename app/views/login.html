@@ -1,14 +1,14 @@
 	<div class="container login">
 		<div class="loginContainer">
-			<form>
+			<form ng-model="login.loginForm">
 				<div class="form-group">
-					<input type="email" class="form-control" ng-model="user.email" placeholder=" Email" />
+					<input type="email" class="form-control" ng-model="login.user.email" placeholder=" Email" />
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
+					<input type="password" class="form-control" ng-model="login.user.password" placeholder="Password" />
 				</div> 
 				<div class="form-group text-center">
-					<input type="submit" class="btn loginBtn" ng-click="login(user)" value="Login" />
+					<input type="submit" class="btn loginBtn" ng-click="login.login(login.user)" value="Login" />
 				</div>
 			</form>
 		</div>
