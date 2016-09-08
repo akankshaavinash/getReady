@@ -13,6 +13,8 @@ angular.module('getReadyNewApp')
       scope: {eventSources:'=ngModel',calendarWatchEvent: '&'},
       controller: 'UicalendarCtrl',
       link: function(scope, elm, attrs, controller) {
+       
+        // console.log(scope.eventSources);
 
         var sources = scope.eventSources,
             sourcesChanged = false,

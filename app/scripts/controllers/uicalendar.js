@@ -15,6 +15,8 @@ angular.module('getReadyNewApp')
       'Karma'
     ];
     
+    // console.log($scope.eventSources);
+
     var sources = $scope.eventSources,
           extraEventSignature = $scope.calendarWatchEvent ? $scope.calendarWatchEvent : angular.noop,
 
@@ -53,6 +55,7 @@ angular.module('getReadyNewApp')
       var sourceSerialId = 1, sourceEventsSerialId = 1;
       // @return {String} fingerprint of the source object and its events array
       this.sourceFingerprint = function(source) {
+        // console.log(source);
           var fp = '' + (source.__id || (source.__id = sourceSerialId++)),
               events = angular.isObject(source) && source.events;
           if (events) {

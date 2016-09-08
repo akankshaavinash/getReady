@@ -17,6 +17,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
   color: #FFFFFF;
 }
+.commonBtn:active{
+  color: #FFFFFF;
+}
+.commonBtn:focus{
+  color: #FFFFFF;
+}
 .commonBtn:hover{
   color: #FFFFFF;
   }
@@ -28,6 +34,9 @@
   }
 body {
   padding: 0;
+  /*background-image: url('../images/interview.jpg');*/
+  background-size: cover;
+ 
 }
 hr{
   margin-bottom: 5px;
@@ -46,6 +55,7 @@ hr{
 .header {
   border-bottom: 0px solid #e5e5e5;
   margin-bottom: 10px;
+
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -55,14 +65,17 @@ hr{
   padding-bottom: 19px;
 }
 .header .navbar-default{
-  background-color: #04AD77;
+  /*background-color: #04AD77;*/
+  background-color: #FFFFFF; 
   border: 0 ;
 }
 .header .navbar-default .navbar-brand{
-  color: #FFFFFF;
+  /*color: #FFFFFF;*/
+   color: #f90628;
 }
 .header .navbar-default .navbar-nav > li > a{
-  color: #FFFFFF;
+  color: #f90628;
+  /*color: #FFFFFF;*/
   font-size: 1.2em;
   font-weight: 200;
 }
@@ -72,7 +85,9 @@ hr{
 .header .navbar-brand span{
   font-weight: 100;
 }
-
+.logo span{
+  font-size: 12px;
+}
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -95,42 +110,95 @@ hr{
 
 /* Supporting marketing content */
 .marketing {
-  margin: 150px 0 0 0;
+  /*margin: 100px 0 0 0;*/
+
+}
+.mainContainer{
+  margin-bottom: 10%;
+  padding: 0;
 }
 .seeker{
-  
+  margin-bottom: 9%;
 }
 .interviewer{
- 
+  margin-bottom: 9%;
+}
+.recruiterCont{
+  margin-bottom: 10%;
+}
+.recruiterCont .col-md-10{
+  height: 150px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 8px 6px -6px #3A3838;
+  margin: 1% 7%;
+
+}
+.recruiterCont .headSection{
+  margin: 1% 7%;
+}
+.recruiterCont #searchSeeker{
+  font-size: x-large !important;
+}
+.recruiterCont .headSection .subHeaders li{
+  display: inline-block;
+}
+.vacancylist, .vacancyAppliedList{
+  /*border: 1px solid #04AD77;*/
+  padding: 0;
+}
+.vacancylist ul, .vacancyAppliedList ul{
+  padding: 0;
+}
+.vacancylist ul li{
+  border-right: 1px solid #f4586e;
+}
+.vacancylist ul li, .vacancyAppliedList ul li{
+  list-style: none;
+  padding: 5px 35px;
+  background: #FFFFFF;
+}
+.vacancylist .panel-group{
+  margin-bottom: 0 !important;
+}
+.profilePicCont img{
+    width: 90%;
+    height: 110px;
+    margin: 15% 0;
 }
 .seeker a{
   /*background-color: #04AD77;*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#04ad77+0,03734f+100 */
-  background: #04ad77; /* Old browsers */
-  background: -moz-linear-gradient(top,  #04ad77 0%, #03734f 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #04ad77 0%,#03734f 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #04ad77 0%,#03734f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04ad77', endColorstr='#03734f',GradientType=0 ); /* IE6-9 */
-
+  /*background: #04ad77; 
+  background: -moz-linear-gradient(top,  #04ad77 0%, #03734f 100%); 
+  background: -webkit-linear-gradient(top,  #04ad77 0%,#03734f 100%); 
+  background: linear-gradient(to bottom,  #04ad77 0%,#03734f 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04ad77', endColorstr='#03734f',GradientType=0 ); 
+*/
+  background: #777;
   -webkit-box-shadow: 0 8px 6px -6px #3A3838;
     box-shadow: 0 8px 6px -6px #3A3838;
-
+     padding: 20px 90px;
 }
 .interviewer a{
   /*background-color: #0066FF;*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0066ff+0,0052cc+100 */
-  background: #0066ff; /* Old browsers */
-  background: -moz-linear-gradient(top,  #0066ff 0%, #0052cc 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #0066ff 0%,#0052cc 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #0066ff 0%,#0052cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0066ff', endColorstr='#0052cc',GradientType=0 ); /* IE6-9 */
-
+  /*background: #0066ff; 
+  background: -moz-linear-gradient(top,  #0066ff 0%, #0052cc 100%); 
+  background: -webkit-linear-gradient(top,  #0066ff 0%,#0052cc 100%); 
+  background: linear-gradient(to bottom,  #0066ff 0%,#0052cc 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0066ff', endColorstr='#0052cc',GradientType=0 ); 
+*/
+  background: #da3140;
   -webkit-box-shadow: 0 8px 6px -6px #3A3838;
     box-shadow: 0 8px 6px -6px #3A3838;
+    padding: 20px 94px;
+}
+.recruiter a{
+   padding: 20px 103px;
 }
 .seeker a, .interviewer a{
   color: #FFFFFF;
-  padding: 20px 90px;
+ 
   text-decoration: none;
   border-radius: 10px;
   font-size: 2em;
@@ -154,6 +222,27 @@ hr{
   font-weight: 200;
   color: #9A9A9A;
   letter-spacing: 2px;
+}
+.interviewSetup{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;  
+}
+.recJobseekerList .ullilist{
+  padding-left: 0;
+  margin: 5% 15%;
+  border: 1px solid #f4586e;
+  padding: 20px;
+}
+.recJobseekerList .ullilist li{
+    list-style: none;
+    padding-bottom: 5px;
+    /*border: 1px solid #04AD77;*/
+
+}
+
+.chkBox{
+  margin: 2% !important;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

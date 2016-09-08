@@ -1,0 +1,38 @@
+<div class="row recruiterCont">
+    <div class="row headSection">
+        <ul class = "subHeaders">
+            <!-- <li><a href = "#/dashboard">Dashboard </a> /</li> -->
+            <li><a href = "#/vacancy">Vacancy </a> /</li>
+            <li><a href = "#/recruiter">Candidate</a></li>
+        </ul>
+    </div>
+        <div class="row headSection">
+    	<div class="col-md-6"><h4>Non-Applied</h4></div>
+    	<div class="col-md-6"><h4>Applied</h4></div>
+    </div>
+    <div class="row headSection">
+    	<div class="col-md-6 vacancylist">
+    		<ul>
+    			<li ng-repeat = "v in totalVacancyList">
+
+    			 <!-- <b>{{v.name}}({{v.company}}):</b> {{v.description}} <a href="" >Apply</a> -->
+    			<uib-accordion close-others="oneAtATime">
+    				<uib-accordion-group is-open="status.open">
+      					<uib-accordion-heading>
+        					{{v.name}}({{v.company}})  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      					</uib-accordion-heading>
+      				{{v.description}} <a href="" ng-click="applyForJob(v.skillset,v.company_job_code, $index)">Apply</a>
+    				</uib-accordion-group>
+  				</uib-accordion>
+    			</li>
+    		</ul>
+    		
+    	</div>
+    	<div class="col-md-6 vacancyAppliedList">
+    		<ul>
+                <li ng-repeat = "applied in appliedJobList">{{applied.vacancy}}, {{applied.jobseeker_email_id}}</li>
+    			
+    		</ul>
+    	</div>
+    </div>
+</div>

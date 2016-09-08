@@ -29,25 +29,16 @@
             <div class="form-group">
                 <select class="form-control" ng-model="reg.user.accType">
                     <option disabled selected class="defaultSelect">Select Account type</option>
-                    <option>Seeker</option>
-                    <option>Interviewer</option>
+                    <option>seeker</option>
+                    <option>interviewer</option>
                 </select>
             </div>
-            <div class="form-group">
-                <select name="multipleSelect" id="multipleSelect" ng-model="reg.user.skillset" multiple>
-                  <option disabled selected class="defaultSelect">Select skillsets</option>
-                  <option value="option-1">Html / Html5, CSS / CSS3, SASS, Javascript, JQuery</option>
-                  <option value="option-2">CSS</option>
-                  <option value="option-3">Javascript</option>
-                  <option value="option-1">Java, J2EE, Spring, Hibernate</option>
-                  <option value="option-2">SQL</option>
-                  <option value="option-3">Mongodb</option>
-                  <option value="option-3">Angularjs</option>
-                  <option value="option-3">Bootstrap</option>
-                  <option value="option-3">React JS</option>
-                  <option value="option-3">Nodejs</option>
-                </select>
+            <div class="form-group" >
+                <select class="form-control"  name="multipleSelect" id="multipleSelect" ng-model="reg.user.skillset">
+                  <option ng-repeat="x in skills" value="{{x.skillset}}">{{x.skillset}}</option>
+                </select>  
             </div>
+           
             <div class="form-group">
                 <input type="email" class="form-control" ng-model="reg.user.email" placeholder=" Email*" name="email"required/>
                 <div class= "error" ng-show="registerForm.$submitted || registerForm.email.$touched">
@@ -67,8 +58,8 @@
                 </div>
             </div>
             <div class="form-group">
-		        <input type="file" file-model="resume"/><br />
-		    	<button class="btn" ng-click="uploadFile()">Upload Resume</button>
+		        <input type="file"  id = "file-chooser"/><br />
+		    	<!-- <button class="btn" ng-click="reg.uploadFile()">Upload Resume</button> -->
 		    </div>
             <div class="form-group text-center">
                 <input type="submit" class="btn loginBtn" ng-click="reg.register(reg.user)" value="Register" />

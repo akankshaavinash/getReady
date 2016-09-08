@@ -8,7 +8,7 @@
  * Controller of the getReadyNewApp
  */
 angular.module('getReadyNewApp')
-  .controller('LoginCtrl', function ($scope, $cookies, $location, userService) {
+  .controller('LoginCtrl', function ($scope, $cookies, $rootScope, $location, userService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,7 +16,9 @@ angular.module('getReadyNewApp')
     ];
 
     var login = this;
+   
     login.login = function(loginData){
+    	loginData.accType = $rootScope.accType;
     	if (loginData.password === '') {
 	        return false;
 	      }
@@ -25,10 +27,16 @@ angular.module('getReadyNewApp')
 	      }
 
 	      userService.login(loginData).then(function(data){
-	      	console.log(data.Items[0]);
-	      	if (data.Items[0].password === loginData.password) {
-	      		userService.setSessionToken(data.ssotoken);
-	      		$location.path('/seeker');
+	      	// console.log(data[0].password);
+	      	// console.log('entered password', loginData.password);
+	      	if (data[0].password === loginData.password) {
+	      		userService.setSessionToken(data[0].email_id, data[0].acc_type);
+	      		if (data[0].acc_type === 'recruiter') {
+	      				$location.path('/recruiter');
+	      		}else{
+	      				$location.path('/seeker');
+	      		}
+	      		
 	      	}else{
 	      		console.log('Password does not match.......');
 	      	}

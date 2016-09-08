@@ -32,8 +32,8 @@ angular
       })
       .when('/interviewer', {
         templateUrl: 'views/interviewer.html',
-        controller: 'InterviewerCtrl',
-        controllerAs: 'interview'
+        controller: 'AccountCtrl',
+        controllerAs: 'account'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
@@ -59,6 +59,20 @@ angular
         templateUrl: 'views/jobList.html',
         controller:'JobslistCtrl',
         controllerAs: 'jobs'
+      })
+      .when('/recruiter',{
+        templateUrl: 'views/recruiter.html',
+        controller:'RecruiterCtrl',
+        controllerAs: 'recruit'
+      }).when('/dashboard',{
+        templateUrl: 'views/recruiterDashboard.html',
+        controller:'RecruiterCtrl',
+        controllerAs: 'recruit'
+      })
+      .when('/vacancy',{
+        templateUrl: 'views/vacancy.html',
+        controller:'VacancyCtrl',
+        controllerAs: 'recruit'
       })
       .otherwise({
         redirectTo: '/'

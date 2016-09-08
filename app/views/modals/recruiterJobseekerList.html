@@ -1,0 +1,12 @@
+<div class="recJobseekerList">
+    <div class="modal-body">
+        <!-- Single button -->
+        <ul class="ullilist">
+        	<li ng-repeat = "item in items"><input type="checkbox" class="chkBox" name ="selectedSeeker[]" value ="{{item.email_id}}" ng-model="item.val"></input>{{item.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.email_id}}</li>
+        </ul>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Confirm</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

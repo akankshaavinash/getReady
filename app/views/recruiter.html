@@ -1,0 +1,39 @@
+<div class="row recruiterCont">
+    <div class="row headSection">
+        <ul class = "subHeaders">
+            <!-- <li><a href = "#/dashboard">Dashboard </a> /</li> -->
+            <li><a href = "#/vacancy">Vacancy </a> /</li>
+            <li><a href = "#/recruiter">Candidate</a></li>
+        </ul>
+    </div>
+	<div class="row headSection">
+        <div class="col-md-9">
+            <div class="col-md-5">
+               <input type="text" class="form-control" name="searchJobseeker" ng-model="searchSeeker" placeholder="Search Job Seeker" /> 
+            </div>
+             <a href="" ng-click = "searchJobSeeker()"><i id="searchSeeker" class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+		<div class="col-md-3 pull-right">
+			<a href="#/register" class="btn commonBtn">Add Jobseeker</a>
+		</div>
+	</div>
+    <div class="row headSection">
+        {{regSeeker}} <a href="" ng-show = "showaddseeker" ng-click = "addJobSeeker()">Add to List</a>
+    </div>
+	<div class="col-md-10" ng-repeat = "seeker in jobseekerListData">
+        <div class="col-md-4">
+            <h4>{{seeker.name}}</h4>
+            <p><b>Email:</b> {{seeker.email_id}}</p>
+            <p><b>Phone:</b> {{seeker.phone}}</p>
+            <a href="">Resume Link</a>
+        </div>
+        <div class="col-md-6">
+        <br /> <br />
+            <p><b>Status:</b> Confirm</p>
+            <p><b>Skillset:</b> {{seeker.skillset}}</p>
+        </div>
+        <div class="col-md-2 profilePicCont">
+        	<img src="images/defaultProfileIcon.jpg">
+        </div>
+    </div>
+</div>

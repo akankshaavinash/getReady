@@ -14,11 +14,28 @@ angular.module('getReadyNewApp')
             'AngularJS',
             'Karma'
         ];
-         
+        
+        $scope.data = {
+     		repeatSelect: null,
+     		availableOptions: [
+						       	{id: '1', name: 'Front End Developer'},
+						       	{id: '2', name: 'Backend Developer'},
+						       	{id: '3', name: 'Web Developer'},
+						       	{id: '4', name: 'QA Engineer'},
+						       	{id: '5', name: 'Software Engineer'},
+						       	{id: '6', name: 'Senior Software Engineer'},
+						       	{id: '7', name: 'Sr Cloud Software Engineer'},
+						       	{id: '8', name: 'Software Architect'}
+						    ],
+    		};
+    		// console.log($scope.data.repeatSelect);
         $scope.ok = function() {
-
-        	var interviewSetup = { skillset: $scope.skillset, date: $scope.dt, time: $scope.mytime };
-        	console.log(interviewSetup);
+        	
+        	var date = moment($scope.dt).format('l') ;
+        	var startDt = $scope.mytime;
+        	var endDt = $scope.mytime//moment($scope.mytime).startOf('hour').add(1, 'hours');
+        	var interviewSetup = { skillset: $scope.data.repeatSelect, date: date, start: startDt, end: endDt};
+        	// console.log(endDt);
             //validate the data here
             // if ($scope.existingObjectId) {
             //     $modalInstance.close($scope.existingObjectId);
