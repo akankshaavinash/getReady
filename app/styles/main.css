@@ -54,7 +54,8 @@ hr{
 /* Custom page header */
 .header {
   border-bottom: 0px solid #e5e5e5;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
+  padding-bottom: 30px; 
 
 }
 /* Make the masthead heading the same height as the navigation */
@@ -64,20 +65,39 @@ hr{
   line-height: 40px;
   padding-bottom: 19px;
 }
+.header .navbar-header{
+  margin-left: 2%;
+}
 .header .navbar-default{
   /*background-color: #04AD77;*/
-  background-color: #FFFFFF; 
+  /*background-color: #FFFFFF; */
+  background-color: rgba(0,0,0,0.9);
   border: 0 ;
+  padding-bottom: 12px;
 }
 .header .navbar-default .navbar-brand{
-  /*color: #FFFFFF;*/
-   color: #f90628;
+  color: #FFFFFF;
+   /*color: #f90628;*/
+   letter-spacing: 4px;
 }
-.header .navbar-default .navbar-nav > li > a{
-  color: #f90628;
-  /*color: #FFFFFF;*/
+.header .navbar-default .navbar-nav > li > a, .header .navbar-default .navbar-nav > li > span > a{
+  /*color: #f90628;*/
+  color: #FFFFFF;
   font-size: 1.2em;
   font-weight: 200;
+}
+.header .navbar-default .navbar-nav > li > span > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  line-height: 49px;
+}
+.header .navbar-default .navbar-nav > li > span > a:hover, .header .navbar-default .navbar-nav > li > span > a:focus{
+  text-decoration: none;
+}
+.header .navbar-default .navbar-nav > li > span > a:focus{
+  background-color: #000000;
+    border-color: #000000;
 }
 .header .navbar-brand{
   font-size: 26px;
@@ -87,10 +107,11 @@ hr{
 }
 .logo span{
   font-size: 12px;
+  letter-spacing: 0;
 }
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
+  padding-top: 8px;
   color: #FFFFFF;
   border-top: 1px solid #e5e5e5;
   background-color: #000000;
@@ -101,6 +122,12 @@ hr{
 .footer ul li{
   display: inline-block;
   padding: 3% 10%;
+}
+.footer ul{
+  margin-bottom: 0;
+}
+.footer .fa-facebook, .footer .fa-twitter, .footer .fa-linkedin{
+  font-size: 20px;
 }
 .container-narrow > hr {
   margin: 30px 0;
