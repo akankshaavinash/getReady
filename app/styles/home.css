@@ -1,32 +1,47 @@
 .sub_titles {
     font-size: 2em;
     font-family: fantasy;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 
 .sub_heading {
     margin-top: 7%;
     margin-bottom: 3% 
 }
-
+.section-0, .section-1, .section-2, .section-3, .section-4{
+	width: 100%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 90vh;
+}
+.innerContainer{
+	margin-top: 5%;
+}
+.section-0{
+	 background-image: url('../images/connections.png');
+	 /*background-size: cover;*/
+}
 .section-0 .flipCards {
-    margin-top: 12%;
+    margin-top: 10%;
     padding-left: 12%;
 }
 
 .section-0 .col-md-2 {
     color: #ffffff;
-    margin-right: 5%;
+   
 }
 
 .block {
     position: relative;
     z-index: 1;
+    margin-top: 2%;
+    margin-right: 5%;
 }
 
-.block {
+/*.block {
     perspective: 1000;
-}
+}*/
 
 #f1_card {
     width: 200px;
@@ -52,11 +67,15 @@
     display: block;
     transform: rotateY(180deg);
     box-sizing: border-box;
-    padding: 15px;
-    padding-top: 35%;
+    padding: 5px;
+    padding-top: 20%;
     color: white;
     text-align: center;
     background-color: #aaa;
+
+    font-size: 20px;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .briefcase {
@@ -150,6 +169,7 @@
     /*background: rgba(218, 49, 64, 1);*/
     padding-bottom: 50px;
     background-image: url('../images/connections.png');
+    /*background-size: cover;*/
 }
 
 .section-2 h2,
@@ -165,6 +185,7 @@
 .section-2 .services p {
     font-size: 1.6em;
     margin: 20% 0 0 20%;
+    text-align: justify;
 }
 
 .section-3 {
@@ -289,7 +310,68 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
-
+@media screen and (max-width: 480px){
+	.marketing{
+		padding: 0;
+	}
+	.section-0, .section-1, .section-2, .section-3, .section-4{
+		height: 80vh;
+	}
+  #f1_card {
+    width: 133px;
+    height: 133px;
+  }
+  .section-0 .flipCards {
+    padding-left: 0;
+  }
+  .sub_titles {
+    /*font-size: 1.5em;*/
+   } 
+   .face i{
+   	font-size: 3em;
+   }
+   .face.back{
+   	font-size: 0.8em;
+   }
+   .block{
+   	margin-right: 0;
+   	margin-top: 5%;
+   }
+   .sub_heading {
+    margin-top: 20%;
+	}
+	.separator img{
+		width: 100%;
+	}
+	.section-2 .services p {
+	    font-size: 1.2em;
+	    margin: 12% 0 12% 0;
+	}
+	.section-2 .services img {
+	    width: 105%;
+	}
+	.box, .box-1, .box-2, .box-3{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.box i, .box-1 i, .box-2 i, .box-3 i{
+		font-size: 2em
+	}
+	.box .fa-3x, .box-1 .fa-3x, .box-2 .fa-3x, .box-3 .fa-3x{
+		font-size: 1em;
+		padding-top: 35%;
+	}
+	.section-3{
+		padding: 0;
+	}
+	.section-3 i{
+		padding-top: 15%;
+	} 
+	.section-3 ul{
+		padding-left: 15px;
+    	padding-bottom: 15px;
+	}
+}
 
 
 
