@@ -100,6 +100,12 @@ hr{
   background-color: #000000;
     border-color: #000000;
 }
+.header .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+     border-color: transparent; 
+}
+.header .navbar-collapse{
+  border-top: 0px;
+}
 .header .navbar-brand{
   font-size: 26px;
 }
@@ -149,6 +155,7 @@ hr{
 .mainContainer{
   margin-bottom: 10%;
   padding: 0;
+  background-image: url('../images/connections.png');
 }
 .seeker{
   margin-bottom: 9%;

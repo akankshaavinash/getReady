@@ -1,3 +1,4 @@
+
 .sub_titles {
     font-size: 2em;
     font-family: fantasy;
@@ -19,7 +20,7 @@
 	margin-top: 5%;
 }
 .section-0{
-	 background-image: url('../images/connections.png');
+	 /*background-image: url('../images/connections.png');*/
 	 /*background-size: cover;*/
 }
 .section-0 .flipCards {
@@ -50,7 +51,7 @@
     transition: all 1.0s linear;
 }
 
-.block:hover #f1_card {
+.block:hover #f1_card, .block:active #f1_card, .block:focus #f1_card {
     transform: rotateY(180deg);
     border: 0px;
 }
@@ -168,7 +169,7 @@
     /*color: #ff3019;*/
     /*background: rgba(218, 49, 64, 1);*/
     padding-bottom: 50px;
-    background-image: url('../images/connections.png');
+    /*background-image: url('../images/connections.png');*/
     /*background-size: cover;*/
 }
 
@@ -199,7 +200,7 @@ background: linear-gradient(to bottom,  #e4efc0 0%,#abbd73 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 );
 */
     /*background-image: url('../images/old_map.png');*/
-    background-image: url('../images/connections.png');
+    /*background-image: url('../images/connections.png');*/
 }
 
 .section-3 .fa-arrow-right {
@@ -210,7 +211,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', end
 .section-4 {
     margin-top: 3%;
     margin-bottom: 7%;
-    background-image: url('../images/connections.png');
+    /*background-image: url('../images/connections.png');*/
 }
 
 .section-4 p {
@@ -303,7 +304,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .subSeparator{
 	float: left;
-    width: 375px;
+    
 }
 hr.style-seven {
     /*height: 30px;
@@ -354,6 +355,7 @@ hr.style-seven {
    .block{
    	margin-right: 0;
    	margin-top: 5%;
+   	cursor: pointer;
    }
    .sub_heading {
     margin-top: 20%;
@@ -389,6 +391,9 @@ hr.style-seven {
 		padding-left: 15px;
     	padding-bottom: 15px;
 	}
+	.subSeparator{
+		width: 375px;
+	}
 	.section-4{
 		margin-bottom: 20%;
 	}
@@ -402,6 +407,9 @@ hr.style-seven {
 	.innovation, .trust, .quality, .respect{
 		padding: 0;
 	} 
+	.section-4 p{
+		text-align: justify;
+	}
 
 
 }
