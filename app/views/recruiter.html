@@ -39,7 +39,7 @@
                     <td>{{seeker.email_id}}</td>
                     <td>{{seeker.phone}}</td>
                     <td>{{seeker.skillset}}</td>
-                    <td></td>
+                    <td>{{seeker.status}}</td>
                     <td><a ng-href="{{seeker.resume}}">Download</a></td>
                     <td><a href="" class="btn commonBtn briefcase" ng-click="addEvent($index)" ng-if = "seeker.isInterviewSet">Set Interview</a>
                     <p ng-if = "!seeker.isInterviewSet"> {{seeker.date}} , {{seeker.time | date : 'hh:mm a'}}</p>

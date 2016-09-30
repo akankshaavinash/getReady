@@ -34,11 +34,18 @@ angular.module('getReadyNewApp')
                           // console.log('empty');
                           candidateData[0].isInterviewSet = true;
                           // $scope.isInterviewSet = false;
+                          candidateData[0].status = 'Idle';
                         }else{
                           // $scope.isInterviewSet = true;
+
                            candidateData[0].isInterviewSet = false;
                            candidateData[0].date = interviewData[0].date;
                            candidateData[0].time = new Date(interviewData[0].start);
+                           if (interviewData[0].status === undefined || interviewData[0].status === '') {
+                                candidateData[0].status = 'Request';
+                           } else{ 
+                                    candidateData[0].status = interviewData[0].status;
+                                }
                         }
                       });
                         $scope.jobseekerListData.push(candidateData[0]);
