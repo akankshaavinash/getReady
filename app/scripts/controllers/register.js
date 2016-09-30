@@ -53,23 +53,27 @@ angular.module('getReadyNewApp')
             } else {
                 console.log('Nothing to upload.');
             }
-            if (loginSessionData.currentUser.accType === "recruiter") {
+            
+            if (loginSessionData !== undefined && loginSessionData.currentUser.accType === "recruiter") {
+                console.log(loginSessionData.currentUser.email, user.email);
                 userService.addJobseekerToRecruiter(loginSessionData.currentUser.email, user.email).then(function(data) {
                     console.log("seeker added.....");
                 });
+            }else{
+                console.log('Only Registering');
             }
             // console.log(user);
            
         }
 
 
-        function getSeeker() {
-            seeker.seekerInfo().then(function(data) {
-                // console.log(data);
-            });
-        }
+        // function getSeeker() {
+        //     seeker.seekerInfo().then(function(data) {
+        //         // console.log(data);
+        //     });
+        // }
 
-        getSeeker();
+        // getSeeker();
 
         $scope.autoHide = function() {
             $timeout(function() {

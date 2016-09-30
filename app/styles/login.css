@@ -6,7 +6,8 @@
 	border-radius: 10px;
 	margin: 0 auto;
 	padding: 3em 2em;
-	width: 60%;
+	width: 45%;
+	margin-top: 10%;
 }
 .login .loginContainer .loginBtn, .register .regContainer .loginBtn{
 	background-color: #04AD77;

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="col-md-12">
     <div class="col-md-12 calendarContainer">
         <!-- <div class="col-md-2">
             <div ng-include="'views/leftnav.html'"></div>
@@ -13,22 +13,43 @@
                         <button class="btn" ng-click="addRemoveEventSource(eventSources,eventSource)">
                             Toggle Source
                         </button> -->
-                    <button type="button" class="btn commonBtn" ng-click="addEvent()" ng-if = "showAddEvent">
-                        Add Event
+                    <button type="button" class="btn commonBtn briefcase" ng-click="addEvent()" ng-if = "showAddEvent">
+                        Request Interview
                     </button>
                 </div>
                 <ul class="eventsList">
                     <li ng-repeat="e in events">
                         <div class="card">
-                            <div class="eventsFixed cardBody">
+                            <div class="eventsFixed cardBody"  ng-class="interviewTaken ? 'feedback' :'nofeedback'">
                                 <a class="close" ng-click="remove($index)"><i class="fa fa-times"></i></a>
-                                <div class="cardTitle"><b> <input ng-model="e.title"></b></div>
-                                <div>{{e.date}}</div>
-                                <div>{{e.start | date : 'hh:mm a'}} </div>  <!-- - {{e.end | date : 'hh:mm a'}} -->
-                                <div>Seeker: {{e.jobseeker_confirm}}</div>
-                                <div>Interviewer: <a href="" ng-click="confirmTime($index)">{{e.interviewer_confirm}}</a></div>
+                                <div class="cardTitle"><b> {{e.title}}</b></div>                    
+                                <div class="col-md-12">
+                                    <div class="col-md-5">{{e.date}} , {{e.start | date : 'hh:mm a'}}</div> 
+                                    <div class="col-md-3">Seeker: {{e.jobseeker_confirm}}</div> Interviewer:<a href="" ng-show="isSeeker" ng-click="confirmTime($index)">{{e.interviewer_confirm}}</a>
+                                    <a href="" ng-show="!isSeeker">{{e.interviewer_confirm}}</a>
+                                </div>
+                                
+                                <div ng-if = "!showAddEvent"> 
+                                    <div ng-if = "e.interviewTaken" class="feedbackCont">                                 
+                                        <textarea class="form-control" ng-model = "feedback.msg"></textarea>
+                                        <label><input type="radio" ng-model="feedback.result" value="Interviewer Accept"> Accept</label>
+                                        <label><input type="radio" ng-model="feedback.result" value="Interviewer Reject"> Reject</label>
+                                        <a href="" ng-click="saveFeedback(feedback, e.jobseeker_email_id)" class="btn commonBtn briefcase pull-right saveFeedbackBtn">Save</a>
+                                    </div>
+                                </div>
+                                <!-- <a class="close" ng-click="remove($index)"><i class="fa fa-times"></i></a>
+                                <div class="cardTitle"><b> {{e.title}}</b></div>
+                                <div>{{e.date}} , {{e.start | date : 'hh:mm a'}} </div> -->
+                              
+                                <!-- <div>Seeker: {{e.jobseeker_confirm}} , Interviewer:<a href="" ng-show="isSeeker" ng-click="confirmTime($index)">{{e.interviewer_confirm}}</a>
+                                    <a href="" ng-show="!isSeeker">{{e.interviewer_confirm}}</a>
+                                </div> -->
+                                <!-- <div ng-show="isSeeker">Interviewer: <a href="" ng-click="confirmTime($index)">{{e.interviewer_confirm}}</a></div>
+                                <div ng-show="!isSeeker">Interviewer: <a href="">{{e.interviewer_confirm}}</a></div> -->
+
+                                
                             </div>
-                            <div class="cardFooter text-center"><a href="" >View Full Detail</a></div>
+                            <!-- <div class="cardFooter text-center"><a href="" >View Full Detail</a></div> -->
                         </div>
                     </li>
                 </ul>

@@ -165,6 +165,7 @@ hr{
 }
 .recruiterCont{
   margin-bottom: 10%;
+  /*margin-top: 2%;*/
 }
 .recruiterCont .col-md-10{
   height: 150px;
@@ -174,13 +175,17 @@ hr{
 
 }
 .recruiterCont .headSection{
-  margin: 1% 7%;
+  margin: 1% 0;
 }
 .recruiterCont #searchSeeker{
   font-size: x-large !important;
 }
 .recruiterCont .headSection .subHeaders li{
   display: inline-block;
+}
+
+.headSection .searchInput, .headSection .searchCont{
+  padding-left: 0;
 }
 .vacancylist, .vacancyAppliedList{
   /*border: 1px solid #04AD77;*/
@@ -314,6 +319,18 @@ hr{
   }
   .footer .fa-facebook, .footer .fa-twitter, .footer .fa-linkedin {
     font-size: 14px;
+  }
+
+  .recruiterCont .headSection, .recruiterCont .col-xs-12{
+    margin: 1% 0;
+  }
+  .headSection .col-xs-10{
+    margin-bottom: 1%;
+  }
+  
+  .addBtn{
+    float: left !important;
+    margin-left: 4%;
   }
 }
 

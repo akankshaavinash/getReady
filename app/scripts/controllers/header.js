@@ -19,7 +19,9 @@ angular.module('getReadyNewApp')
         $scope.isLoggedOut = true;
         $scope.isRegistered = true;
 
+
         var loginSessionData = userService.getSessionToken();
+
         if (loginSessionData !== undefined) {
             $rootScope.accType = loginSessionData.currentUser.accType;
         }
@@ -28,8 +30,9 @@ angular.module('getReadyNewApp')
             // $log.log('Dropdown is now: ', open);
         };
         $scope.getSeekerlink = function(accType) {
-            console.log(accType);
-
+            // console.log(accType);
+            $rootScope.accType = accType;
+            
             if (loginSessionData !== undefined) {
 
                 if ($rootScope.accType === accType) {
@@ -44,13 +47,31 @@ angular.module('getReadyNewApp')
             }
 
         }
+
+        $scope.dashboardLink = function(){
+            if (loginSessionData !== undefined) {
+               if ($rootScope.accType === 'seeker' || $rootScope.accType === 'interviewer') {
+                    $location.path('/account');
+                }else{
+                    $location.path('/recruiter');
+                } 
+            }else{
+                location.path('/');
+            }
+            
+            
+        }
+
         $scope.logout = function() {
             // console.log('logged out');
             userService.removeSessionToken();
             $location.path('/');
             $scope.isLoggedIn = true;
             $scope.isLoggedOut = true;
+            $scope.showDashboard = false;
             $rootScope.accType = "";
+            $scope.isRegistered = true;
+            loginSessionData = undefined;
         }
 
 
@@ -62,6 +83,8 @@ angular.module('getReadyNewApp')
                 // console.log('header');
                 $scope.isLoggedIn = false;
                 $scope.isLoggedOut = false;
+                $scope.isRegistered = false;
+                $scope.showDashboard = true;
             }
         };
 

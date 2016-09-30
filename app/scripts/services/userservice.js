@@ -71,7 +71,7 @@ angular.module('getReadyNewApp')
              }
              // console.log(postData);
             apiservice.apiCall('POST', url, postData).then(function(data) {
-                console.log(data);
+                // console.log(data);
                 deferred.resolve(data);
             });
             return deferred.promise;
@@ -91,12 +91,13 @@ angular.module('getReadyNewApp')
             return deferred.promise;
         };
 
-        this.setSessionToken = function (email_id, acc_type) {
+        this.setSessionToken = function (email_id, acc_type, skill) {
             
            var obj = {
                 currentUser: {
                   email: email_id,
-                  accType: acc_type
+                  accType: acc_type,
+                  skill: skill
                 }
               };
           return $cookies.putObject(LOGIN_COOKIE, obj);
@@ -164,7 +165,7 @@ angular.module('getReadyNewApp')
             var url = apiBaseUrl + 'jobseeker';
             var postData = {
                 "operation": "query",
-                "query": "INSERT INTO Recruiter (email_id, jobseeker_email_id, acc_type, name, password, phone) VALUES('" + recruiter_id +"','" + jobseeker_email_id +"', 'recruiter', '"+ recruiter_name +"' , '" + password +"','"+ recruiter_ph +"');"
+                "query": "INSERT INTO RecruiterCandidates (recruiter_emailid, jobseeker_emailid) VALUES('" + recruiter_id +"','" + jobseeker_email_id +"');"
             };
 
             return $q(function(resolve, reject) {
@@ -185,6 +186,23 @@ angular.module('getReadyNewApp')
             };
 
             apiservice.apiCall('POST', url, postData).then(function(data) {
+                deferred.resolve(data);
+            });
+            return deferred.promise;
+        };
+
+        this.getCandidateInterviewList = function(jobseeker_emailid){
+            var deferred = $q.defer();
+            var url = apiBaseUrl +'jobseeker';
+            var query = "SELECT * FROM Interview WHERE jobseeker_email_id = '" + jobseeker_emailid +"'";           
+            // console.log(query);
+            var postData = {
+                "operation": "query",
+                "query": query
+            };
+            
+            apiservice.apiCall('POST', url, postData).then(function(data) {
+               
                 deferred.resolve(data);
             });
             return deferred.promise;

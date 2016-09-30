@@ -9,7 +9,7 @@
     <div class="regContainer">
         <form name="registerForm" ng-model="reg.regForm">
             <div class="form-group">
-                <input type="text" class="form-control" name="fname" ng-model="reg.user.name" placeholder="First Name*" required />
+                <input type="text" class="form-control" name="fname" ng-model="reg.user.name" placeholder="Name*" required />
                 <div class= "error" ng-show="registerForm.$submitted || registerForm.fname.$touched">
                     <div ng-show="registerForm.fname.$error.required">Tell us your first name.</div>
                 </div>

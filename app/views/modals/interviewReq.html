@@ -4,10 +4,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-6">
-                    <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
+                    <!-- <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
                         <option value=""> --- Select Skill --- </option>
                         <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
-                    </select>
+                    </select> -->
+                    <div class="form-group" >
+                        <select class="form-control"  name="multipleSelect" id="multipleSelect" ng-model="skillset">
+                          <option ng-repeat="x in skills" value="{{x.skillset}}">{{x.skillset}}</option>
+                        </select>  
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <p class="input-group">

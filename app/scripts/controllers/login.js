@@ -18,6 +18,7 @@ angular.module('getReadyNewApp')
     var login = this;
    
     login.login = function(loginData){
+    	console.log($rootScope.accType);
     	loginData.accType = $rootScope.accType;
     	if (loginData.password === '') {
 	        return false;
@@ -27,10 +28,10 @@ angular.module('getReadyNewApp')
 	      }
 
 	      userService.login(loginData).then(function(data){
-	      	// console.log(data[0].password);
+	      	console.log(data[0].password);
 	      	// console.log('entered password', loginData.password);
 	      	if (data[0].password === loginData.password) {
-	      		userService.setSessionToken(data[0].email_id, data[0].acc_type);
+	      		userService.setSessionToken(data[0].email_id, data[0].acc_type, data[0].skillset);
 	      		if (data[0].acc_type === 'recruiter') {
 	      				$location.path('/recruiter');
 	      		}else{

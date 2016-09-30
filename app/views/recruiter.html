@@ -1,27 +1,55 @@
-<div class="row recruiterCont">
-    <div class="row headSection">
+<div class="col-md-12 recruiterCont">
+    <div class="col-md-12 headSection">
         <ul class = "subHeaders">
             <!-- <li><a href = "#/dashboard">Dashboard </a> /</li> -->
             <li><a href = "#/vacancy">Vacancy </a> /</li>
             <li><a href = "#/recruiter">Candidate</a></li>
         </ul>
     </div>
-	<div class="row headSection">
-        <div class="col-md-9">
-            <div class="col-md-5">
-               <input type="text" class="form-control" name="searchJobseeker" ng-model="searchSeeker" placeholder="Search Job Seeker" /> 
+	<div class="col-md-12 headSection">
+        <div class="col-md-9 col-xs-12 searchCont">
+            <div class="col-md-5 col-xs-10 searchInput">
+               <input type="text" class="form-control" name="searchJobseeker" ng-model="searchSeeker" placeholder="Search by email id" /> 
             </div>
              <a href="" ng-click = "searchJobSeeker()"><i id="searchSeeker" class="fa fa-search" aria-hidden="true"></i></a>
         </div>
-		<div class="col-md-3 pull-right">
-			<a href="#/register" class="btn commonBtn">Add Jobseeker</a>
+		<div class="col-md-3 col-xs-5 pull-right addBtn">
+			<a href="#/register" class="btn commonBtn  pull-right">Add Jobseeker</a>
 		</div>
 	</div>
-    <div class="row headSection">
+    <div class="headSection">
         {{regSeeker}} <a href="" ng-show = "showaddseeker" ng-click = "addJobSeeker()">Add to List</a>
     </div>
-	<div class="col-md-10" ng-repeat = "seeker in jobseekerListData">
-        <div class="col-md-4">
+    <div class="col-md-12 col-xs-12 table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="tableHeaderStyle">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>                    
+                    <th>Skillset</th>
+                    <th>Status</th>
+                    <th>Resume</th>
+                    <th>Interview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat = "seeker in jobseekerListData">
+                    <td>{{seeker.name}}</td>
+                    <td>{{seeker.email_id}}</td>
+                    <td>{{seeker.phone}}</td>
+                    <td>{{seeker.skillset}}</td>
+                    <td></td>
+                    <td><a ng-href="{{seeker.resume}}">Download</a></td>
+                    <td><a href="" class="btn commonBtn briefcase" ng-click="addEvent($index)" ng-if = "seeker.isInterviewSet">Set Interview</a>
+                    <p ng-if = "!seeker.isInterviewSet"> {{seeker.date}} , {{seeker.time | date : 'hh:mm a'}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<!-- <div class="col-md-10 col-xs-12" ng-repeat = "seeker in jobseekerListData"> -->
+        <!-- <div class="col-md-4 col-xs-5">
             <h4>{{seeker.name}}</h4>
             <p><b>Email:</b> {{seeker.email_id}}</p>
             <p><b>Phone:</b> {{seeker.phone}}</p>
@@ -31,9 +59,9 @@
         <br /> <br />
             <p><b>Status:</b> Confirm</p>
             <p><b>Skillset:</b> {{seeker.skillset}}</p>
-        </div>
-        <div class="col-md-2 profilePicCont">
+        </div> -->
+        <!-- <div class="col-md-2 profilePicCont">
         	<img src="images/defaultProfileIcon.jpg">
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 </div>
